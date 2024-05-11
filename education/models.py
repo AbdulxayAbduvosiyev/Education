@@ -16,7 +16,7 @@ class We_have_courses(models.Model):
 class Enrolling_to_course(models.Model):
     name = models.CharField(max_length=225)
     surname = models.CharField(max_length=225)
-    selected_courses = models.ManyToManyField(We_have_courses)
+    selected_courses = models.CharField(max_length=225)
     phone_number = models.IntegerField()
     is_active = models.BooleanField(default=False)
     
@@ -43,14 +43,12 @@ class Our_courses(models.Model):
     course_name = models.ForeignKey(We_have_courses , on_delete=models.CASCADE)
     about_course = models.TextField()   
     
-    def __str__(self):
-        return self.course_name
     
     
 class Contact_us(models.Model):
     name = models.CharField(max_length=225)
     phone_number = models.IntegerField()
-    message = models.TextField()
+    message = models.CharField(max_length=225)
     is_active = models.BooleanField(default=False)    
     
     def __str__(self):

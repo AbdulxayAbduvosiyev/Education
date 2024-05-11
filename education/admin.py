@@ -28,7 +28,7 @@ class TeachersAdmin(admin.ModelAdmin):
 @admin.register(Our_courses)
 class Our_coursesdAdmin(admin.ModelAdmin):
     search_fields = ('id', 'teacher_name')  
-    list_display = ('id', 'teacher_name', 'number_students')
+    list_display = ('id', 'course_name', 'teacher_name', 'number_students')
     list_display_links = ('id', 'teacher_name', 'number_students')
     
 @admin.register(Contact_us)
